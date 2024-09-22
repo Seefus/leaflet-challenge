@@ -8,3 +8,20 @@ body,
 html {
   height: 100%;
 }
+
+/* Style for the map legend */
+.info.legend {
+    background-color: white;  /* Background for the legend */
+    padding: 10px;  /* Padding inside the legend */
+    border: 2px solid #ccc;  /* Border around the legend */
+    border-radius: 5px;  /* Rounded corners for the legend */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);  /* Optional: shadow effect */
+}
+
+.info.legend i {
+    width: 18px;  /* Width of color swatches */
+    height: 18px;  /* Height of color swatches */
+    float: left;  /* Align swatches to the left */
+    margin-right: 8px;  /* Space between swatches and text */
+    opacity: 0.8;  /* Adjust opacity of color swatches */
+}
