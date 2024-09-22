@@ -11,20 +11,20 @@ d3.json(queryUrl).then(function (data) {
 
     // Define a function to determine the marker size based on magnitude
     function markerSize(mag) {
-        return mag * 4;  // Adjust size factor as needed
+        return mag * 4;  
     }
 
-    // Define a function to determine the color based on depth
+    // determine the color based on depth
     function markerColor(depth) {
         return depth > 90 ? 'red' :
                depth > 70 ? 'orange' :
                depth > 50 ? 'yellow' :
                depth > 30 ? 'green' :
                depth > 10 ? 'blue' :
-                            'purple';  // Adjust the color ranges as needed
+                            'purple'; 
     }
 
-    // Define a function that we want to run once for each feature in the features array.
+    
     function onEachFeature(feature, layer) {
         layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p>`);
     }
@@ -44,7 +44,7 @@ d3.json(queryUrl).then(function (data) {
         onEachFeature: onEachFeature
     });
 
-    // Send our earthquakes layer to the createMap function
+    
     createMap(earthquakes);
 }
   
@@ -62,7 +62,6 @@ d3.json(queryUrl).then(function (data) {
     // Create a baseMaps object.
     let baseMaps = {
       "Street Map": street,
-      "Topographic Map": topo
     };
   
     // Create an overlay object to hold our overlay.
@@ -89,7 +88,7 @@ legend.onAdd = function() {
     let colors = ['purple', 'blue', 'green', 'yellow', 'orange', 'red'];
 
     div.innerHTML = '<h4>Depth (km)</h4>';
-    // Loop through our depth intervals and generate a label with a colored square for each interval.
+    
     for (let i = 0; i < depthGrades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + colors[i] + '"></i> ' +
